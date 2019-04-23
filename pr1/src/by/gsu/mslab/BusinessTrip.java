@@ -1,3 +1,4 @@
+
 package by.gsu.mslab;
 
 public class BusinessTrip {
@@ -47,10 +48,7 @@ public class BusinessTrip {
     }
 
     public static String convertation(int penny) {
-        int remainder = penny%100;
-        int tenths = remainder/10;
-        int hundreds = remainder - tenths*10;
-        return (penny/100) + "." + tenths + hundreds;
+        return penny/100+"."+penny/10%10+penny%10;
     }
 
     public String show() {
@@ -70,5 +68,3 @@ public class BusinessTrip {
                 convertation(getTotal());
     }
 }
-
-
