@@ -1,32 +1,35 @@
 package by.gsu.mslab;
 
 public class Subject{
-    private String subjName;
+    private String name;
     private Material material;
     private double volume;
-
-    public Material getMaterial() {
-        return material;
-    }
 
     public Subject(){
 
     }
 
-    public Subject(String newName,Material newMaterial, double newVolume){
-        subjName = newName;
-        volume = newVolume;
-        material = newMaterial;
+    public Subject(String name,Material material, double volume){
+        this.name = name;
+        this.volume = volume;
+        this.material = material;
     }
 
     public String getName() {
-        return subjName;
+        return name;
     }
 
     public void setName(String name) {
-        this.subjName = name;
+        this.name = name;
     }
 
+    public Material getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(Material material) {
+        this.material = material;
+    }
 
     public double getVolume() {
         return volume;
@@ -36,16 +39,12 @@ public class Subject{
         this.volume = volume;
     }
 
-    public void setMaterial(Material material) {
-        this.material = material;
-    }
-
     public double getMass(){
-        return material.DENSITY * volume;
+        return material.getDENSITY() * volume;
     }
 
     @Override
     public String toString() {
-        return subjName + ";" + material + ";" + volume + ";" + getMass();
+        return name + ";" + material + ";" + volume + ";" + getMass();
     }
 }

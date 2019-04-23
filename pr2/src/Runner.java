@@ -3,13 +3,16 @@ import by.gsu.mslab.Subject;
 
 public class Runner {
     public static void main(String[] args){
-        final Material steel = new Material("Steel",7850.0);
-        Subject wire = new Subject("Wire", steel, 0.03);
+        Material steel = new Material("steel",7850.0);
+        Material cooper = new Material("copper", 8500);
+        Subject wire = new Subject("wire", steel, 0.03);
 
-        System.out.println(wire);
+        System.out.println(wire.toString());
 
-        final Material cooper = new Material("Cooper", 8500.0);
         wire.setMaterial(cooper);
-        System.out.println("The wire mass is " + wire.getMass() + " kg.");
+        System.out.println("Copper wire's mass is " + wire.getMass());
+
+        wire.setMaterial(steel);
+        System.out.println(wire.toString());
     }
 }
